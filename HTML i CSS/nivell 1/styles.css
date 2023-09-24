@@ -1,0 +1,117 @@
+
+*{
+    margin:10px;
+    padding:10px;
+    
+}
+
+#contenedor {
+    max-width: 1200px;
+    height: auto;
+}
+
+header {
+    background-color: black; 
+}
+    #menú{
+        background-color: rgb(89, 89, 89);
+        display: flex;
+    }
+        #logo{
+            background-color: coral;
+            flex: 1 1 auto;
+        }
+        nav{
+            background-color: coral;
+            flex: 4 1 auto;
+        }
+        #redes{
+            background-color: coral;
+            flex: 1 1 auto;
+        }
+    #cabecera{
+        background-color:orange;
+    }
+        #texto-cabecera{
+            background-color: gold;
+        }
+main{
+    background-color: black;
+    display:flex;
+}
+    section{
+        background-color: dimgray;
+        flex: 2 1 auto;
+        display:flex;
+        flex-flow: row wrap; /*wrap, porque si los elementos no caben pasan automaticamente a estar debajo*/
+    }
+        article{
+            background-color: blue;
+            flex: 1 1 35%;
+        }
+        #texto-section{
+            background-color: darkcyan;
+            flex: 1 1 100%;
+        }
+    aside{
+        background-color: crimson;
+        flex: 1 1 auto;
+    }
+        #titulo-aside{
+            background-color: yellow;
+        }
+        #texto-aside{
+            background-color: yellow;
+        }
+footer{
+    background-color: black;
+}
+    #texto-footer{
+        background-color: darkgoldenrod;
+    }
+
+/*RESPONSIVE DESIGN CON MEDIA QUERIES*/
+
+/* Estilos para tabletas en orientación vertical*/
+@media (min-width: 768px) and (max-width: 1024px) {
+     main{
+        background-color: yellow;
+        flex-direction:column;
+     }
+     section{
+        flex:1 1 100%;
+     }
+     aside{
+        flex: 1 1 100%;
+     }
+}
+
+/* Estilos para dispositivos móviles en orientación vertical */
+@media (max-width: 767px) {
+    #menú{
+        flex-direction:column;
+    }
+    main{
+        background-color: yellow;
+        flex-direction:column;
+     }
+        section{
+            background-color: blue;
+        }
+            article{
+                background-color: darkcyan;
+                flex: 1 1 100%;
+            }
+            #texto-section{
+                background-color: aquamarine;
+            }
+        aside{
+            background-color: orange;
+        }
+            #titulo-aside{
+                background-color: moccasin;
+            }
+            #texto-aside{
+                background-color: moccasin;
+            }
+}
