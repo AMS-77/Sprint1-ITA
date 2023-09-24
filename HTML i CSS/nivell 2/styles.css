@@ -1,0 +1,228 @@
+
+*{    
+    margin:5px;
+    padding:5px;
+    box-sizing: border-box;  /*Al calcular el tamaño de los elementos, solo tiene en cuenta su contenido y su borde.  */
+}
+
+#contenedor {
+    max-width: 1200px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url("./images/header.jpg"); 
+    background-position:center;
+    background-size: cover;/* La imagen de fondo cubre completamente el elemento todo su contenedor
+                             sin distorsionarse, recortando la imagen si es necesario.*/
+    background-repeat: no-repeat;
+    background-size: 110%;
+}
+    #menú{
+        display: flex;   /*Activamos el modo flex para alinear todos los elementos del menú en diseño
+                            de fila o columna, en este caso por defecto los alineará en fila*/
+    }
+        #logo{
+            width: 15%;
+        }
+            #logo img{
+                max-width: 50%; 
+                max-height:auto;
+                object-fit: cover; /*El elemento img cubrirá todo el espacio de su contenedor,
+                                    no se distorsionará la imagen*/
+            }
+        nav{
+            width: 60%;
+        }
+        nav ul li {
+            font-size: 0.8em;
+            list-style: none;    /*Esto borrará todos los puntos que nos hace el formato lista*/
+            display: inline-block;
+            text-align: center;
+            padding-left: 1em;
+            color: dimgrey;
+        }
+        nav ul li:hover{
+            background-color: coral;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+          }
+        #redes ul{
+            padding: 0px;
+        }
+        #redes{
+            width: 15%;
+            text-align: right;
+        }
+        #redes ul li{
+            font-size: 0.8em;
+            list-style: none;
+            display: inline-block;
+            color: dimgrey;
+            margin-right: 0px;
+        }
+        #redes ul li:hover{
+            background-color: coral;
+        }
+        #texto-cabecera{
+            text-align: center;
+            vertical-align: bottom;
+            opacity: 50%;   /*para conseguir que el elemento sea semi-transparente*/
+            color:orange;
+            
+        }
+main{
+    background-color: white;
+    display:flex;
+    margin-left: -5px;    
+}
+    section{
+        background-color: silver;
+        width: 67%;
+        display:flex;
+        flex-flow: row wrap; /*wrap, porque si los elementos no caben, pasan automaticamente a estar debajo*/
+    }
+        article{
+            background-color: blanchedalmond;
+            max-width: 100%;
+            flex: 1 1 35%;   /*la primera posición nos da la proporción que tiene este elemento respecto a 
+                                los demás (se estira), la segundo es para lo contrario (se encoje hasta esa proporción
+                                si es necesario por falta de espacio y 35% es el porcentaje que ocupa el elemento*/
+        }
+            article img {
+                max-width: 95%; 
+                max-height:auto;
+                object-fit: cover;
+                display: block;
+                margin: 0 auto;
+        }
+            article h3 {
+                color: blanchedalmond;
+                background-color: darksalmon;
+                text-align: left; 
+        }
+            article h3:hover{
+                background-color: red;
+            }
+            article p{
+                column-count: 2;   /*dividimos el párrafo en 2 columnas como en un periódico*/
+            }
+            article div a {
+                text-decoration: none;
+                color:silver ; 
+                display: block; /*para que el elemento ocupe el ancho disponible y comience en una nueva linea*/
+            }
+            article div a:hover{    /* Hacemos el efecto roll-over*/
+                color: red;
+            }
+        #texto-section{
+            flex: 1 1 100%;
+            color: black;
+            font-weight: bold; 
+            text-align: center;
+            height: auto;
+        }
+    aside{
+        background-color:silver;
+        width: 33%;
+        margin-right: 0;
+    }
+        #titulo-aside{
+            font-weight: bold; /* Ponemos el texto en negrita */
+            text-align: center; /* Centramos horizontalmente */
+            font-size: large;
+        }
+        #texto-aside{
+            font-weight: bold; 
+            text-align: center; 
+        }
+footer{
+    background-color: blanchedalmond;
+}
+    #texto-footer p{ 
+        color: black;
+        text-align: center; 
+    }
+
+/*RESPONSIVE DESIGN CON MEDIA QUERIES*/
+
+/* Estilos para tabletas en orientación vertical*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    header{
+        height:auto;
+    } 
+        #logo img{
+            max-width: 80%;
+        }
+        #redes{
+            width: 30%;
+            text-align: right;
+        }
+            #redes ul li{
+                font-size: 1em; 
+                margin-right: 10px; 
+            }
+    #texto-cabecera{
+        font-size: 10px;
+     }
+    main{
+        flex-direction:column;
+     }
+     section{
+        width: 100%;
+     }
+     aside{
+        width: 100%;
+     }
+}
+
+/* Estilos para dispositivos móviles en orientación vertical */
+@media (max-width: 767px) {
+    header{
+        height: auto;
+    }
+    #menú{
+        flex-direction:row;
+    }
+    #logo img{
+        max-width: 80%; 
+        max-height: auto;
+        object-fit: contain; 
+    }
+    nav{
+        font-size: xx-small;
+    }
+    nav ul li{
+        padding-left: 0px;
+    }
+    #redes{
+        width: 100%;
+        text-align: right;
+    }
+    #redes ul{
+        padding: 0px;
+    }
+    #redes ul li{
+        font-size: 0,8em;
+        margin-right: 10px;
+    }
+    #texto-cabecera{
+        font-size: 5px ;
+    }
+    main{
+        flex-direction:column;
+     }
+        section{
+            width: 100%;
+        }
+            article{
+
+                width: 100%;
+            }
+        aside{
+            width: 100%;
+        }
+}
