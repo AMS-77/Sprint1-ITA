@@ -13,7 +13,7 @@ Després crea una constant que inclogui el teu nom i mostra-ho en format títol 
     Pero treballem amb el navegador i posem BR pel salt de linia:" */
     echo $num . "<br>" . $numD . "<br>" . $paraula . "<br>" . $esPar;
 
-    //mostrem per pantalla el valor de la constant, concatenem les etiquetes h1 entre cometes (dobles o simples)
-    echo '<h1>' . NOM . '</h1>';
+    //mostrem per pantalla el valor de la constant, entre etiquetes h1.
+    echo "<h1> NOM </h1>";
 
 ?>
