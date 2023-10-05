@@ -22,4 +22,6 @@ $directoriArxiu = $objecteConstants->getDir();
 //Mostrem en pantalla :
 
 echo "El path complet és: $pathComplet i l'arxiu es troba al directori: $directoriArxiu";
+
+echo $objecteConstants;
 ?>
