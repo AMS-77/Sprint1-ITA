@@ -7,20 +7,15 @@ class Ex2TestingNivell1 {
         $this->nota = $nota;
     }
 
-    public function verificarGrau(): string 
-    {
-        if ($this->nota >= 60) 
+    public function verificarGrau() {
+        return match (true)
         {
-            return "Primera Divisió";
-        } elseif ($this->nota >= 45) 
-        {
-            return "Segona Divisió";
-        } elseif ($this->nota >= 33) 
-        {
-            return "Tercera Divisió";
-        } else {
-            return "Reprovat";
-        }
+            $this->nota >= 60 => "Primera Divisió",
+            $this->nota >= 45 => "Segona Divisió",
+            $this->nota >= 33 => "Tercera Divisió",
+            default => "Reprovat",
+        };
     }
 }
 ?>
+
