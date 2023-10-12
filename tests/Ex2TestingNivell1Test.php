@@ -13,21 +13,21 @@ require './src/Ex2TestingNivell1.php';
 
 class Ex2TestingNivell1Test extends TestCase {
     public function test_VerificarGrau() {
-        $alumne = new Alumne(100);
+        $alumne = new Ex2TestingNivell1(100);
         $this->assertEquals("Primera Divisió", $alumne->verificarGrau());
-        $alumne = new Alumne(60);
+        $alumne = new Ex2TestingNivell1(60);
         $this->assertEquals("Primera Divisió", $alumne->verificarGrau());
-        $alumne = new Alumne(59);
+        $alumne = new Ex2TestingNivell1(59);
         $this->assertEquals("Segona Divisió", $alumne->verificarGrau());
-        $alumne = new Alumne(45);
+        $alumne = new Ex2TestingNivell1(45);
         $this->assertEquals("Segona Divisió", $alumne->verificarGrau());
-        $alumne = new Alumne(44);
+        $alumne = new Ex2TestingNivell1(44);
         $this->assertEquals("Tercera Divisió", $alumne->verificarGrau());
-        $alumne = new Alumne(33);
+        $alumne = new Ex2TestingNivell1(33);
         $this->assertEquals("Tercera Divisió", $alumne->verificarGrau());
-        $alumne = new Alumne(32);
+        $alumne = new Ex2TestingNivell1(32);
         $this->assertEquals("Reprovat", $alumne->verificarGrau());
-        $alumne = new Alumne(0);
+        $alumne = new Ex2TestingNivell1(0);
         $this->assertEquals("Reprovat", $alumne->verificarGrau());
     }
 }
